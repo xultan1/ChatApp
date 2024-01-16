@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <title>Users</title>
+    
+    <link href="{% static 'chat/design.css' %}?ver = 1.6" rel="stylesheet">
+</head>
+<body style="padding: 0px;margin: 0px;">
+
+
+    <div class="topNav">
+
+      <p style="margin: 0px;font-size: 30px;padding-top: 20px;font-weight: bold;">Add User</p>
+			
+      
+    </div>
+
+    
+    <div>
+			<ul class="homeUl">
+        {% for person in persons %}
+				<li>
+          <a href="{% url 'addFriend' person.username %}" class="asButton">{{person.username}}</a>
+				</li>
+        {% endfor %}
+			</ul>
+		</div>
+
+
+
+
+
+      
+    
+</body>
+
+</html>
