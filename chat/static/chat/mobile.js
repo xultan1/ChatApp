@@ -27,7 +27,7 @@ class App extends React.Component {
     }
 
     componentDidMount(){
-        fetch('http://127.0.0.1:8000/chat/friends/ac')
+        fetch('http://13.51.85.113:8000/chat/friends/ac')
         .then(res => res.json())
         .then(data => {
             this.setState({
@@ -37,7 +37,7 @@ class App extends React.Component {
         });
 
 
-        fetch('http://127.0.0.1:8000/chat/loggedUser')
+        fetch('http://13.51.85.113:8000/chat/loggedUser')
         .then(res => res.json())
         .then(data => {
             this.setState({
@@ -73,9 +73,9 @@ class App extends React.Component {
                          <a className="notName">{this.state.notification}</a>
                         </button>
 
-                        <button onClick={this.back} className='topNavDivButton' type="submit"><img className="topNavDivButtonImg" src={"http://127.0.0.1:8000/static/chat/previous.png"} alt=""/></button>
+                        <button onClick={this.back} className='topNavDivButton' type="submit"><img className="topNavDivButtonImg" src={"http://13.51.85.113:8000/static/chat/previous.png"} alt=""/></button>
 
-                        <button onClick={this.clickPlus} className="addUserButton"><img className="plusButton" src={"http://127.0.0.1:8000/static/chat/icons8-plus-100.png"} alt=""/></button>
+                        <button onClick={this.clickPlus} className="addUserButton"><img className="plusButton" src={"http://13.51.85.113:8000/static/chat/icons8-plus-100.png"} alt=""/></button>
 
                     </div>
 
@@ -117,7 +117,7 @@ class App extends React.Component {
         },this.connect);    
 
 
-        fetch('http://127.0.0.1:8000/chat/history/'+name)
+        fetch('http://13.51.85.113:8000/chat/history/'+name)
         .then(res => res.json())
         .then(data => {
             this.setState({
@@ -146,7 +146,7 @@ class App extends React.Component {
 
 
         
-        fetch('http://127.0.0.1:8000/chat/history/'+name)
+        fetch('http://13.51.85.113:8000/chat/history/'+name)
         .then(res => res.json())
         .then(data => {
             this.setState({
@@ -158,13 +158,13 @@ class App extends React.Component {
     }
 
     clickPlus = (e) => {
-        window.location.href = "http://127.0.0.1:8000/chat/people/ac"
+        window.location.href = "http://13.51.85.113:8000/chat/people/ac"
     }
 
 
     connect = (e) => {
 
-        fetch('http://127.0.0.1:8000/chat/chats/'+this.state.personName)
+        fetch('http://13.51.85.113:8000/chat/chats/'+this.state.personName)
         .then(res => res.json())
         .then(data => {
             this.setState({
@@ -196,7 +196,7 @@ class App extends React.Component {
         //console.log('ws://' + window.location.host + '/ws/chat/' + this.state.theResponse[0].id + '/')
 
         /*const chatSocket = new WebSocket(
-            `ws://127.0.0.1:8000/ws/chat/3/`
+            `ws://13.51.85.113:8000/ws/chat/3/`
         );*/
 
         const chatSocket = new WebSocket(
@@ -276,7 +276,7 @@ class App extends React.Component {
 
         const chatSocketPublic = new WebSocket(
             'ws://'
-            + 'http://127.0.0.1:8000'
+            + 'http://13.51.85.113:8000'
             + '/ws/public/'
             + this.state.loggedInUser
             + '/'
@@ -368,7 +368,7 @@ class ChatView extends React.Component {
 
 
     componentDidMount(){
-        /*fetch('http://127.0.0.1:8000/chat/history/'+this.props.name)
+        /*fetch('http://13.51.85.113:8000/chat/history/'+this.props.name)
         .then(res => res.json())
         .then(data => {
             this.setState({
@@ -414,7 +414,7 @@ class ChatView extends React.Component {
                     
                         <div className="textarea-container">
                             <textarea  value={this.state.chatMessage}  onChange={this.handleChange}  name="chatMessage" id="formTextArea" cols="10" rows="1"></textarea>
-                            <button onClick={this.submitMessage} className="formButton" type="submit"><img className="buttonImage" src={"http://127.0.0.1:8000/static/chat/send-message.png"} alt=""/></button>
+                            <button onClick={this.submitMessage} className="formButton" type="submit"><img className="buttonImage" src={"http://13.51.85.113:8000/static/chat/send-message.png"} alt=""/></button>
                         </div>
                     
                     
